@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tools</title>
+	</head>
+	<body>
+		<main>
+			<h1>Tools</h1>
+			<ul></ul>
+		</main>
+		<script>
+			fetch('/static/json/tools.json')
+				.then((x) => x.json())
+				.then((x) =>
+					x.forEach((item) => {
+						const a = document.querySelector('ul');
+
+						a.innerHTML =
+							a.innerHTML += `<li><a href="${item.url}">${item.label}</a></li>`;
+					})
+				);
+		</script>
+	</body>
+</html>

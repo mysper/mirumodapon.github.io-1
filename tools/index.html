@@ -9,6 +9,9 @@
 			html {
 			  font-size: 10px;
 			}
+			body {
+			  padding: 10px 0;
+			}
 			h1 {
 			  font-size: 2.4rem;
 			}
@@ -16,7 +19,23 @@
 			  font-size: 1.8rem;
 			}
 			li {
-			  margin: 10px 0;
+			  margin: 15px 0;
+			}
+			main {
+			  width: max-content;
+			  min-width: 500px;
+			  max-width: 80%;
+			  margin: auto;
+			}
+			@media screen and (min-width: 700px) {
+				html {
+				  font-size: 12px;
+				}
+			}
+			@media screen and (max-width: 400px) {
+				html {
+				  font-size: 8px;
+				}
 			}
 		</style>
 	</head>

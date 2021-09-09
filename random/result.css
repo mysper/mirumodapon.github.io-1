@@ -1,0 +1,18 @@
+.result {
+	display: flex;
+	max-width: 80vw;
+	flex-wrap: wrap;
+}
+.result span {
+	display: block;
+	margin: 20px;
+	cursor: pointer;
+}
+
+.result span:hover {
+	color: tomato;
+	text-decoration: line-through;
+}
+.result .error {
+	color: tomato;
+}

@@ -6,5 +6,9 @@
 	{
 		"label": "QRcode Generator",
 		"url": "/qr-generator"
+	},
+	{
+		"label": "Random Number",
+		"url": "/random/number"
 	}
 ]

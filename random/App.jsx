@@ -22,8 +22,11 @@ const App = () => {
 	const error = (msg) => ({ status: 'error', msg });
 	const handleGenerate = (e) => {
 		if (int.current.checked) setResult(generateInt());
-		else if (float.current.checked) console.log(0);
+		else if (float.current.checked) setResult(generateFloat());
 	};
+	const handleChange = () => {
+		point.current.disabled = !float.current.checked;
+	}
 	const generateInt = () => {
 		if (!getValue(from) || !getValue(to))
 			return error('Please enter the range!');
@@ -31,13 +34,13 @@ const App = () => {
 			return error(
 				'Please enter how many number do you went ot generate.'
 			);
-		let range = getValue(to) - getValue(from) + 1;
+		let range = getValue(to) - getValue(from);
 		if (range < 0) {
 			const temp = from.current.value;
 			from.current.value = to.current.value;
 			to.current.value = temp;
-			range = Math.abs(range);
 		}
+		range = Math.abs(range) + 1;
 		if (range < getValue(count) && !repeat.current.checked) {
 			return {
 				status: 'error',
@@ -56,7 +59,40 @@ const App = () => {
 			msg: payload
 		};
 	};
-	const generateFloat = () => {};
+	const generateFloat = () => {
+		if (!getValue(from) || !getValue(to))
+			return error('Please enter the range!');
+		if (!getValue(count))
+			return error(
+				'Please enter how many number do you went ot generate.'
+			);
+		let range = getValue(to) - getValue(from);
+		if (range < 0) {
+			const temp = from.current.value;
+			from.current.value = to.current.value;
+			to.current.value = temp;
+		}
+		range = Math.abs(range);
+		range = range * Math.pow(10, getValue(point)) + 1;
+		if (range < getValue(count) && !repeat.current.checked) {
+			return {
+				status: 'error',
+				msg: 'There is not enough different number.'
+			};
+		}
+		const payload = [];
+		while (payload.length < getValue(count)) {
+			const temp = Math.floor(Math.random() * range) + getValue(from) * Math.pow(10, getValue(point));
+			if (!repeat.current.checked && payload.indexOf(temp) !== -1)
+				continue;
+			payload.push(temp / Math.pow(10,getValue(point)));
+		}
+
+		return {
+			status: 'successed',
+			msg: payload
+		}
+	}
 	return (
 		<>
 			<p>
@@ -67,11 +103,18 @@ const App = () => {
 						name="type"
 						type="radio"
 						ref={int}
+						onChange={handleChange}
 						defaultChecked
 					/>
 					<label htmlFor="int">Integet</label>
-					{/* <input id="float" name="type" type="radio" ref={float} />
-					<label htmlFor="float">Float</label> */}
+					<input
+						id="float"
+						name="type"
+						type="radio"
+						ref={float}
+						onChange={handleChange}
+					/>
+					<label htmlFor="float">Float</label>
 				</>
 				.
 			</p>
@@ -87,9 +130,9 @@ const App = () => {
 				</label>
 				<label>No repeat</label>
 			</p>
-			{/* <p>
-				Float point to: <input type="number" ref={point} />
-			</p> */}
+			<p>
+				Float point to: <input type="number" ref={point} disabled/>
+			</p>
 			{/* <p>
 				except: <input ref={except} />
 			</p> */}

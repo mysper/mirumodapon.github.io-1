@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="/random/string/main.css" type="text/css" charset="utf-8">
+	<script type="text/javascript" src="/random/string/main.js" charset="utf-8">
+	</script>
+	<title>Random String</title>
+</head>
+
+<body>
+	<main id="container">
+	<div id="setting">
+		<input id="A" type="checkbox"/>
+		<label for="A">A-Z</label>
+		<br/>
+		<input id="a" type="checkbox"/>
+		<label for="a">a-z</label>
+		<br/>
+		<input id="n" type="checkbox"/>
+		<label for="0">0-9</label>
+		<br/>
+		<input id="else" type="checkbox"/>
+		<label for="else">Else: </label>
+		<input id="estring" type="search" value="~!@#$%^&(+-*/=)."/>
+		<br/>
+		<label for="length">Length: </label>
+		<input id="length" type="number" />
+		<label for="count">Count: </label>
+		<input id="count" type="number" />
+		<br/>
+		<button onclick="generate()">Generate</button>
+	</div>
+	<hr/>
+	<div id="result"></div>
+	</main>
+</body>
+</html>

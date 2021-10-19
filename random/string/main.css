@@ -1,0 +1,76 @@
+body {
+
+
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+}
+
+
+main {
+
+	width: 700px;
+	max-width: 90%;
+
+	margin: auto;
+
+	padding: 20px 0;
+
+}
+
+
+#setting,#result {
+	width: 80%;
+	margin: auto;
+
+}
+
+label, #estring, #length, #count {
+
+	font-size: 20px;
+	line-height: 32px;
+
+}
+
+
+label[for]:not([for="else"]):not([for="length"]):not([for="count"]) {
+
+	letter-spacing: 6px;
+
+}
+
+#estring {
+	height: 26px;
+	color: darkgray;
+}
+
+#length, #count {
+	width: 150px;
+	height: 20px;
+	margin: 10px 0;
+}
+
+input[id=else]:checked ~ #estring {
+ color: black;
+}
+
+button {
+	margin: 24px 0;
+	font-size: 18px;
+}
+
+input[type=checkbox] {
+	width: 16px;
+	height: 16px;
+}
+
+.result_item {
+ cursor: pointer;
+}
+.result_item:hover {
+
+color: red;
+}

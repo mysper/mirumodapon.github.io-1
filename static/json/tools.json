@@ -1,7 +1,11 @@
 [
 	{
-		"label": "Screen Message",
+		"label": "Screen Message(Light)",
 		"url": "/sm"
+	},
+	{
+		"label": "Screen Message(Dark)",
+		"url": "/bsm"
 	},
 	{
 		"label": "QRcode Generator",

@@ -14,5 +14,9 @@
 	{
 		"label": "Random Number",
 		"url": "/random/number"
+	},
+	{
+		"label": "Random String",
+		"url": "/random/string"
 	}
 ]

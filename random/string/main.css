@@ -43,7 +43,7 @@ label[for]:not([for="else"]):not([for="length"]):not([for="count"]) {
 }
 
 #estring {
-	height: 26px;
+	height: 20px;
 	color: darkgray;
 }
 

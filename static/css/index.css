@@ -20,6 +20,8 @@ nav {
     align-items: center;
     padding: 10px 0;
     border-bottom: .5px solid black;
+	position: absolute;
+	width: inherit;
 }
 
 nav ul {

@@ -39,9 +39,14 @@ nav ul > li {
 #container {
     margin: auto 0;
     display: flex;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
     
+}
+
+#container > * {
+	margin: 10px;
 }
 
 #favicon {
@@ -49,4 +54,14 @@ nav ul > li {
     height: 150px;
     border-radius: 50%;
     border: 2px solid black;
+}
+
+.link {
+	display: flex;
+	justify-content: space-around;
+}
+
+.link img {
+	width: 30px;
+	margin: 5px 12px;
 }
